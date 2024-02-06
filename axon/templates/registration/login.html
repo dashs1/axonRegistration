@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+
+<html lang="en-us" >
+<head>
+  <title>Log in</title>
+  <link rel="stylesheet" type="text/css" href="/static/admin/css/base.css" />
+  <link rel="stylesheet" type="text/css" href="/static/admin/css/login.css" />
+  <meta name="robots" content="NONE,NOARCHIVE" />
+</head>
+
+
+<body class="login" style="background-image: url(https://matrix-tool.idc1.level3.com/static/images/blackBackgroundGradient.png); background-repeat: repeat-x;" data-admin-utc-offset="0">
+
+<!-- Container -->
+<div id="container">
+
+
+{% block content %}
+  <!-- Header -->
+  <div id="header" style="background-color: #145A32; color: #ffffff; text-align: center;"><h2>Login Required <span style="color: red;">(CUID ONLY)</span></h2></div>
+  <!-- Content -->
+  <div id="content" class="colM" style="background-color: #B1F0AB; ">
+    <form method="post">
+      {% csrf_token %}
+      {{ form.as_p }}
+      <div class="submit-row">
+      <button type="submit">Login</button>
+      </div>
+      <br>
+    </form>
+  </div>
+{% endblock %}
+
+</div>
+</body>
+</html>
