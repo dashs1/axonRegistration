@@ -1,0 +1,29 @@
+{% extends "axon/layout.html" %}
+{% block title %}
+{{ page_title }}
+{% endblock title %}
+{% block content %}
+<br />
+<div class="container card text-center">
+    <h1 class="card-title">{{ body_title }}</h1>
+    <p class="card-body">Enter Mac address of device</p>
+    <form action="" method="POST">
+        {% csrf_token %}
+        <div class="form-group">
+            {{ form.mac.label_tag }}
+            {{ form.mac }}
+            <br />
+            {% if form.mac.errors %}
+            {% for error in form.mac.errors %}
+            <p class="error">{{ error }}</p>
+            {% endfor %}
+            {% endif %}
+            <br />
+            <button class="btn btn-primary btn-dark" type="submit" value="Add Device">Add Device</button>
+            <!-- Grab specific fields from the form. -->
+            <!-- {{form.mac.label_tag}} {{form.mac}} -->
+        </div>
+        <br />
+    </form>
+</div>
+{% endblock content %}

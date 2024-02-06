@@ -1,0 +1,20 @@
+{% extends "axon/layout.html" %}
+{% block title %}
+{{ page_title }}
+{% endblock title %}
+{% block content %}
+<br />
+<div class="container card text-center">
+    <h1 class="card-title">{{ body_title }}</h1>
+    <p class="card-body">Select a device to delete.</p>
+    <form action="" method="POST">
+        {% csrf_token %}
+        <div class="form-group">
+            {{form.device_to_delete}}
+        </div>
+        <br />
+        <input class="btn btn-primary btn-dark" type="submit" value="Delete Device">
+    </form>
+    <br />
+</div>
+{% endblock content %}
